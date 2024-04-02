@@ -1,17 +1,13 @@
 const { chromium } = require("playwright");
 // installing playwright for testing purposes.
 
-// Launch headless browser
+// Launch headless browser. Notes at bottom to make easy to read.
 async function launchBrowser() {
-  // creates a binding and needs to have the 'await' keyword inside the function.
-  // launchBrowser launches the brower.
   const browser = await chromium.launch({ headless: false });
-  // variable called browser. await as needed in binding function, chromium is the browser. headless is without GUI
   const page = await browser.newPage();
-  // variable called page awaitin browser.newPage()
   return { browser, page };
-  // return variables browser and page
 }
+// variable called browser. await as needed in binding function, chromium is the browser. headless is without GUI. headless set to 'false' so I can view what's going on
 
 // Navigate to Huel homepage
 async function navigateToHuel(page) {
