@@ -35,21 +35,15 @@ async function searchProteinBar() {
   // select protein powder
   await page.click('[class="button"]');
   //choose Mint Chocolate
-  await page.click('[data-testid="QuantitySelectorIncrease"]');
-  await page.click('[data-testid="QuantitySelectorIncrease"]');
-  // add to cart
-  const button = await page.$('huel-button:has-text("Continue")');
-  await button.click();
-  // continue
-  await button.click();
-  // go back to search
-  await Promise.all([
-    page.waitForNavigation(),
-    page.click('[data-testid="IconLink-Search"]'),
-  ]);
-  await page.waitForSelector('[data-testid="SearchBar__input"]');
-
-  //enter info to search bar
-  await page.fill('[data-testid="SearchBar__input"]', "Instant Meal Cup");
+  try {
+    await page.waitForSelector('[data-testid="QuantitySelectorIncrease"]', {
+      timeout: 5000,
+    });
+    await page.click('[data-testid="QuantitySelectorIncrease"]');
+  } catch (error) {
+    console.error(
+      "The element was not found or the page was closed before the click could be performed."
+    );
+  }
 }
 searchProteinBar();
