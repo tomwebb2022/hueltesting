@@ -1,15 +1,17 @@
 const { chromium } = require("playwright");
-const { test, expect } = require("@playwright/test");
+const { test } = require("@playwright/test");
 // installing playwright for testing purposes.
 test("select 2 items for basket", async () => {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
 
   const page = await browser.newPage();
 
   // Navigate to Huel
-  await page.goto("https://uk.huel.com/");
+  await page.goto("https://huel.com/");
+  //accept location to relocate to uk.huel.com
+  await page.click("a.button.is-success");
 
-  // accepted cookies as it prevented the ability to continue later on in the test
+  //accept cookies
   await page.waitForSelector("#onetrust-accept-btn-handler");
   await page.click("#onetrust-accept-btn-handler");
 
@@ -20,6 +22,7 @@ test("select 2 items for basket", async () => {
     '[data-testid="SearchBar__input"]',
     "complete protein powder"
   );
+
   await page.press('[data-testid="SearchBar__input"]', "Enter");
   //Select powder
   await page.click('a.button:has-text("Shop Powder")');
@@ -68,5 +71,27 @@ test("select 2 items for basket", async () => {
   await page.waitForSelector('button:has-text("Continue To Basket")');
   await page.click('button:has-text("Continue To Basket")');
 
-  //Verify 2 or more items in basket
+  //console
+
+  console.log("How many items in the basket?");
+
+  // Wait for the CartMixAndMatchBundle__items element to be present
+  await page.waitForSelector(".CartMixAndMatchBundle__items");
+
+  // Found CartMixAndMatchBundle__items element in the dev tools and can't seem to find anything else that would help
+  const listItems = page.locator(".CartMixAndMatchBundle__items > li");
+
+  // count items
+  const itemCount = await listItems.count();
+
+  // Log the count of list items
+  console.log(`Number of items in basket: ${itemCount}`);
+
+  //secure checkout to confirm what is in the basket
+  await page.waitForSelector('button:has-text("Secure Checkout")');
+  await page.click('button:has-text("Secure Checkout")');
+
+  // Close the browser
+  await browser.close();
 });
+//
