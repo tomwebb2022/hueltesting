@@ -2,7 +2,7 @@
 
 Before you continue...
 
-If you've seen the film Social Network directed by David Fincher, you may remember the scene of Mark Zuckerberg hacking into Harvard's facebooks and blogging about the process at the same time with an excellent score.
+If you've seen the film Social Network directed by David Fincher, you may remember the scene of Mark Zuckerberg hacking into Harvard's facebooks and blogging about the process at the same time with an excellent music score.
 Well, reading my process is best when listened to the same score - **https://www.youtube.com/watch?v=x5faT66jmG4**
 
 So let's start!
