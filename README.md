@@ -7,9 +7,9 @@ Well, reading my process is best when listened to the same score - **https://www
 
 So let's start!
 
-I was tasked to write a Playwright script using Python, JavaScript, or Typescript that simulates adding two items to the basket on huel.com.
+I was tasked to write a Playwright script using Python, JavaScript, or TypeScript that simulates adding two items to the basket on huel.com.
 
-I went with Javascript as that's what I'm most familiar with it but would love to have the opportunity to tackle similar tests in Typescript and Python
+I went with JavaScript as that's what I'm most familiar with it but would love to have the opportunity to tackle similar tests in TypeScript and Python
 
 I had some interesting experiences with Playwright and had to do some tweaks to try and get my testing set up as smooth as possible. After I was happy with the script I then went back and undid the tweaks.
 
@@ -19,10 +19,10 @@ Although the final test is a headless browser I ran my tests ({ headless: false}
 So I could see the pathway the script was taking. It also looked like someone was hacking me to order some Huel on my behalf. Obviously this is unethical and I have no plans to put that idea forward to the marketing team, but still a fun thought.
 
 The script automatically closed the browser;
-This was frustrating as sometimes I didn't know what was coming next. I tried a few differenet thing but as I wanted to get started, I instead had a chrome private tab open, and followed a long to what the script was doing, I then continued to see find what I needed to do next.
+This was frustrating as sometimes I didn't know what was coming next. I tried a few different things but as I wanted to get started, I instead had a Chrome private tab open, and followed along to what the script was doing, I then continued to see find what I needed to do next.
 
 I didn't want to be running more tests than necessary;
-So I searched through playwright.config.js and commented out webkit and firefox. I'm a firefox user myseld but there are better dev tools on chrome hence the choice to stick with Chromium.
+So I searched through playwright.config.js and commented out WebKit and Firefox. I'm a Firefox user myself but there are better dev tools on Chrome hence the choice to stick with Chromium.
 
 The website ran slower in the middle of the day when running tests;
 That's when I usually had a break to give the website a chance to chill.
@@ -33,7 +33,7 @@ However, after completing the script I edited the code to navigate to https://hu
 
 **Requirements:** 
 
-● Write a Playwright script (~~Python~~, JavaScript, or ~~Typescript~~) that simulates adding two items to the basket on huel.com.
+● Write a Playwright script (~~Python~~, JavaScript, or ~~TypeScript~~) that simulates adding two items to the basket on huel.com.
 
 ● The script should:
 ○ Launch a headless browser (Chrome, Chromium, or Firefox) ✔
@@ -55,6 +55,6 @@ _This took me a while, I ended up selecting CartMixAndMatchBundle\_\_items to co
 
 **Before you go...**
 
-Orignally I wrote multiple async function to tackle each tasks. Later, I realised that for such a simple task I should run one test.
+Originally I wrote multiple async function to tackle each tasks. Later, I realised that for such a simple task I should run one test.
 
-I originally wanted to leave the cookie pop up but it seemed the script didn't allow me to click "continue" after picking a product so I went through my code and added the scrip to accept cookes almost as soon as the page loaded.
+I originally wanted to leave the cookie pop up but it seemed the script didn't allow me to click "continue" after picking a product so I went through my code and added the script to accept cookies almost as soon as the page loaded.
