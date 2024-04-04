@@ -9,6 +9,10 @@ test("select 2 items for basket", async () => {
   // Navigate to Huel
   await page.goto("https://uk.huel.com/");
 
+  // accepted cookies as it prevented the ability to continue later on in the test
+  await page.waitForSelector("#onetrust-accept-btn-handler");
+  await page.click("#onetrust-accept-btn-handler");
+
   // add protein powder
   await page.click('[data-testid="IconLink-Search"]');
   await page.waitForSelector('[data-testid="SearchBar__input"]');
@@ -28,10 +32,22 @@ test("select 2 items for basket", async () => {
     'button[aria-label="Salted Caramel Increase Quantity"]',
     '[data-testid="QuantitySelectorIncrease"]'
   );
-  // accepted cookies as it prevented the ability to continue later on in the test
-  await page.waitForSelector("#onetrust-accept-btn-handler");
-  await page.click("#onetrust-accept-btn-handler");
 
+  //Continue to frequency selection
   await page.waitForSelector('text="Continue"');
   await page.click('text="Continue"');
+
+  // One Time Purchase
+  await page.click('text="One Time Purchase"');
+
+  //click continue
+  await page.waitForSelector('text="Continue"');
+  await page.click('text="Continue"');
+
+  // search for greens
+  await page.waitForSelector('[data-testid="IconLink-Search"]');
+  await page.click('[data-testid="IconLink-Search"]');
+  await page.waitForSelector('[data-testid="SearchBar__input"]');
+  await page.fill('[data-testid="SearchBar__input"]', "nutrition bar");
+  await page.click('a.button:has-text("Shop Complete Nutrition Bar")', "Enter");
 });
