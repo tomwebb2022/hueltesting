@@ -31,20 +31,26 @@ Struggling with loading times due to location popups;
 I used https://uk.huel.com/ for speed, created my script.
 However, after completing the script I edited the code to navigate to https://huel.com as that was the initial website requested in the brief.
 
-**Requirements:**
+**Requirements:** 
+
 ● Write a Playwright script (~~Python~~, JavaScript, or ~~Typescript~~) that simulates adding two items to the basket on huel.com.
 
 ● The script should:
 ○ Launch a headless browser (Chrome, Chromium, or Firefox) ✔
+
 ○ Navigate to the Huel homepage (https://huel.com/) ✔
+
 ○ Search for a specific product (e.g., "Complete Protein Powder")✔
+
 ○ Add the searched product to the basket using Playwright interactions (e.g., click buttons,
-select options)✔
+select options)✔<br>
 _I had an issue with this part as I was unable to search and enter the next product due to the cross sell page. I got around this by continuing to basket and then searching for the product._
+
 ○ Repeat the search and add another product with a different flavor (e.g., search for "Vegan
-Protein Bars", choose a flavor)✔
+Protein Bars", choose a flavor)✔<br>
 _As this wasn't an item as of yet I searched for Nutrition bars. I had a lot of issues selecting the 12 bar box until I manually tested it myself to realise that **clicking Shop Now on 'Single Huel Complete Nutrition Bar Box' would take me to the main page and not add to my basket**_
-● After adding both items, the script should verify that at least two items are present in the basket.✔
+
+● After adding both items, the script should verify that at least two items are present in the basket.✔<br>
 _This took me a while, I ended up selecting CartMixAndMatchBundle\_\_items to confirm item count_
 
 **Before you go...**
