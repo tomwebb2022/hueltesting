@@ -1,12 +1,5 @@
 <h2>Hello and welcome to my Playwright script for my tech test.</h2>
 
-Before you continue...
-
-If you've seen the film Social Network directed by David Fincher, you may remember the scene of Mark Zuckerberg hacking into Harvard's facebooks and blogging about the process at the same time with an excellent music score.
-Well, reading my process is best when listened to the same score - **https://www.youtube.com/watch?v=x5faT66jmG4**
-
-So let's start!
-
 I was tasked to write a Playwright script using Python, JavaScript, or TypeScript that simulates adding two items to the basket on huel.com.
 
 I went with JavaScript as that's what I'm most familiar with it but would love to have the opportunity to tackle similar tests in TypeScript and Python
